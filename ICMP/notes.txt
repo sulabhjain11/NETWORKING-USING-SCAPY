@@ -1,0 +1,14 @@
+
+Echo Request/Reply (Type 0/1): Used to test connectivity and measure network latency. An Echo Request message is sent to a destination, and 
+                               if the destination is reachable, it responds with an Echo Reply message.
+Destination Unreachable (Type 3): Informs the sender that the destination is unreachable due to various reasons, such as network congestion,
+                                  invalid IP address, or firewall blocking.
+Time Exceeded (Type 11): Indicates that the maximum number of hops allowed for a packet has been reached without reaching the destination.
+Parameter Problem (Type 12): Notifies the sender that an error occurred while processing the IP header, such as an invalid IP option or an
+                             incorrect IP header length.
+Router Advertisement (Type 9): Sent by routers to advertise their presence and provide routing information to hosts.
+Router Solicitation (Type 10): Sent by hosts to solicit router advertisements from nearby routers.
+Timestamp Request/Reply (Type 13/14): Used to measure the round-trip time between two hosts for synchronization purposes.
+
+========================================= FOR ICMP ECHO REQUEST ==============================================
+most firewall by default block the ICMP's id field of 0. Change it to something other than 0.======= best to generate it randomly

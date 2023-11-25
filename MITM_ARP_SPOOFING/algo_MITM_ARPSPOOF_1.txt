@@ -1,0 +1,25 @@
+# TARGETING TWO DEVICES
+
+turn on ip_forwarding in the attacker device(here kali)
+get the ip address and the mac address of the two victim devices either using:
+        arp -a (arp caching)
+        passive arp sniffing
+        active arp sniffing
+perform MITM: by sending the one packet to each victim
+
+MAINTAINING OF MITM:
+     actively listen on the network for any arp-request from either of the two victim devices. If you sniff any, send the arp spoofed packet
+     to that device that has requested the arp-request from the second victim device.
+     
+     continue listening
+
+REMOVING TRACES FROM THE TARGET DEVICES.
+     When the attacker presses control-c, its time to quit.
+     before quitting, send original arp-response to the two victims to update their arp table.
+     
+TAKEAWAY OF THIS METHOD AND THE IMPROVEMENTS THAT CAN BE MADE.
+most decices update their arp table only with those arp-responses that it has arp-requested for.
+     IMPROVEMENT: listen on the network. sniff the arp-requested packet, and than send a response with the crafted packet beginning from the
+                  initial stage before performing MITM.
+                  Also, if u send a crafted response to the target, and the target1's response reaches target1 after that, than it may
+                  fail.Therefore, send your packet multiple times.
