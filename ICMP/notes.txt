@@ -1,5 +1,5 @@
 
-Echo Request/Reply (Type 0/1): Used to test connectivity and measure network latency. An Echo Request message is sent to a destination, and 
+Echo Request/Reply (Type 8/0): Used to test connectivity and measure network latency. An Echo Request message is sent to a destination, and 
                                if the destination is reachable, it responds with an Echo Reply message.
 Destination Unreachable (Type 3): Informs the sender that the destination is unreachable due to various reasons, such as network congestion,
                                   invalid IP address, or firewall blocking.

@@ -1,0 +1,8 @@
+DOS
+outdated
+
+sending a packet size more than the devices can handle, causing Buffer overflow and therefore DOS.
+
+Problem that I have: if we send a packet greater than the MTU of the attacking device's interface, the packet will not be send. Also, we have to prevent ip fragmentaion to happen by changing the field in the ip header.
+
+ICMP, UDP packets

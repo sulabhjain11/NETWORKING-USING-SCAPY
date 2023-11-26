@@ -1,0 +1,5 @@
+DDOS ATTACK.
+The attacker first gets the ip address of the target. 
+The attacker than sends an ICMP PACKET, either to the local broadcast or the directed broadcast to that network, spoofed as the target's ip.
+If broadcasting is available on the network, all the other devices in the network will ping flood the target.
+NOTE: 1 ICMP-REQUEST IS SENT BY THE TARGET, CORRESPONDING TO WHICH ALL THE DEVICES IN THE NETWORK, INCLUDING ALL THE DEVICES IN THE SUBNETS SEND AN ICMP- REPLE TO THE TARGET.

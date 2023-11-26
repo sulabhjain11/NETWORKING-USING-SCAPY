@@ -1,0 +1,6 @@
+DOS
+attacker send a lot of icmp request to the target.
+
+DDOS
+attacker infects a lot of computers in the same or different networks.
+the attacker than sends icmp request from all other devices.

@@ -1,0 +1,7 @@
+Suppose you are in a network 192.168.163.0/24
+LOCAL BROADCAST: 
+this will send a ping-request to all the devices connected in the local network. ping 255.255.255.255
+this will not work outside the network.
+DIRECTED BROADCAST: 
+this will send a ping-request to all the devices connected in the local network. ping 192.168.163.255
+this will also work outside the network. ping 163.165.8.255 for the network 163.165.8.0/24
