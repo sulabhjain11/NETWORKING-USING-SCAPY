@@ -1,4 +1,5 @@
 # this is an active arp scanner. either scan using local broadcast or send an arp request to all possible devices in the network.
+# MULTIPROCESSING HAS BEEN USED
 from scapy.all import *
 import signal # IF THE USER PRESSES CONTROL C WHILE THE PACKET IS BEING SENT ,IT WILL NOT BE INTERRUPTED
 import sys
@@ -17,20 +18,20 @@ def local_broadcast_arpscanner(pkt,ip_broadcast):
 	pkt["ARP"].pdst = ip_broadcast
 	pkt.show()
 	sendp(pkt)
-def individual_arp_request(pkt,ip_scanner,mac_scanner):
-	pkt["Ether"].src = mac_scanner
-	pkt["ARP"].op = 1 # who-has
-	pkt["ARP"].hwsrc = mac_scanner
-	pkt["ARP"].psrc = ip_scanner
-	ip_split = ip_scanner.split(".")
-	for i in range(1, 255):
-		ip_split[3] = str(i)
-		ip_target = ".".join(ip_split)
-		pkt["ARP"].pdst = ip_target
-		result = srp(pkt, timeout=2)[0]
-		g_responded.append(result)
-	print("hello there")
-	process_packet() # if there was no interruption from keyboard in the above process
+# def individual_arp_request(pkt,ip_scanner,mac_scanner):
+# 	pkt["Ether"].src = mac_scanner
+# 	pkt["ARP"].op = 1 # who-has
+# 	pkt["ARP"].hwsrc = mac_scanner
+# 	pkt["ARP"].psrc = ip_scanner
+# 	ip_split = ip_scanner.split(".")
+# 	for i in range(1, 255):
+# 		ip_split[3] = str(i)
+# 		ip_target = ".".join(ip_split)
+# 		pkt["ARP"].pdst = ip_target
+# 		result = srp(pkt, timeout=2)[0]
+# 		g_responded.append(result)
+# 	print("hello there")
+# 	process_packet() # if there was no interruption from keyboard in the above process
 
 def process_packet(results):
 	pass
