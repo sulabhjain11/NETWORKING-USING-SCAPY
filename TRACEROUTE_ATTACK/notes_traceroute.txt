@@ -1,0 +1,24 @@
+TTL: present in ip header.
+
+================= PROTOCOLS THAT CAN BE USED FOR TRACEROUTE =========================
+
+ICMP (Internet Control Message Protocol): ICMP is the most commonly used protocol for traceroute, as it is widely supported
+            and often permitted through firewalls. It utilizes ICMP echo requests (pings) to elicit responses from intermediate
+            routers along the path, providing information about each hop.
+
+UDP (User Datagram Protocol): UDP is another commonly used protocol for traceroute. It sends UDP packets to various destination
+            ports on each router, with the expectation that the router will discard them and generate ICMP echo replies.
+            This method can be more effective in environments where ICMP echo requests are blocked.
+
+TCP (Transmission Control Protocol): TCP can also be used for traceroute, but it is less common due to its overhead and potential
+            connection establishment issues. TCP traceroute sends SYN (synchronize) packets to each router,
+            and the SYN-ACK (synchronize acknowledgment) replies provide information about the route.
+
+SCTP (Stream Control Transmission Protocol): SCTP is a newer protocol that can be used for traceroute. It sends SCTP INIT
+            packets to each router, and the SCTP INIT-ACK packets provide information about the route. SCTP traceroute is
+            less common than ICMP, UDP, or TCP traceroute.
+
+Raw IP: Raw IP traceroute sends raw IP packets without any encapsulation within other protocols. This method is less common
+            due to its potential security implications.
+
+Traceroute over IPv6: Traceroute can also be performed over IPv6 networks using ICMPv6 echo requests or other protocols.
