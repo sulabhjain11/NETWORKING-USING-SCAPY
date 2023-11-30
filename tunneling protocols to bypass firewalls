@@ -1,0 +1,35 @@
+ICMP Tunneling: ICMP tunneling encapsulates data within ICMP packets, which are often allowed through firewalls
+                that block other protocols like TCP or UDP. By encapsulating data within ICMP packets, users can bypass these
+                restrictions and establish communication channels that would otherwise be blocked.
+
+GRE (Generic Routing Encapsulation): GRE is a versatile tunneling protocol that can encapsulate various protocols,
+               including IP, within GRE packets. GRE packets can be transmitted over various networks, including
+               Ethernet, Token Ring, and FDDI.
+
+IPsec (IP Security): IPsec is a secure encapsulation protocol that provides authentication, encryption, and integrity
+               protection for IP packets. IPsec tunnels can be used to bypass firewalls by encapsulating data within
+               IPsec packets, which can be transmitted securely over public networks.
+
+SSH (Secure Shell): SSH is a secure remote access protocol that can also be used for tunneling. By establishing an
+               SSH tunnel, users can encapsulate data within SSH packets, allowing them to bypass firewalls and establish
+               connections to blocked resources.
+
+SSL/TLS (Secure Sockets Layer/Transport Layer Security): SSL/TLS are secure communication protocols that can be used
+               for tunneling. Similar to SSH, SSL/TLS tunnels encapsulate data within SSL/TLS packets, allowing users
+               to bypass firewalls and establish secure connections.
+
+PPTP (Point-to-Point Tunneling Protocol): PPTP is an older tunneling protocol that encapsulates data within GRE packets
+               and adds additional authentication and encryption layers. While less commonly used today, PPTP was once a
+               popular method for establishing VPNs.
+
+L2TP (Layer 2 Tunneling Protocol): L2TP is another tunneling protocol that encapsulates data within PPP (Point-to-Point Protocol)
+               packets and provides additional control and signaling features. L2TP is often used in conjunction with IPSec for
+               secure VPN connections.
+
+VXLAN (Virtual Extensible LAN): VXLAN is a relatively new tunneling protocol that encapsulates Ethernet frames within UDP packets.
+               VXLAN is particularly useful for creating virtual networks within data centers or cloud environments.
+
+Obfuscation Methods: Attackers may also employ obfuscation techniques to make their tunneling attempts less detectable
+               by firewalls. These methods may involve fragmenting packets, using custom protocols, or hiding tunneling
+               within other protocols like DNS or HTTP.
+
