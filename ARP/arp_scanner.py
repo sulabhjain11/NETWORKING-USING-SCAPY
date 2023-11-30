@@ -5,8 +5,8 @@ import signal # IF THE USER PRESSES CONTROL C WHILE THE PACKET IS BEING SENT ,IT
 import sys
 import multiprocessing
 
-ip_scanner = "192.168.163.128" #/24 address
-mac_scanner = "00:0c:29:a7:96:49"
+ip_scanner = "192.168.1.4" #/24 address
+mac_scanner = "90:32:4b:21:66:3f"
 ip_broadcast = "255.255.255.255" # another way is the directed broadcast(network.255)
 pkt = Ether()/ARP()
 g_responded = []
