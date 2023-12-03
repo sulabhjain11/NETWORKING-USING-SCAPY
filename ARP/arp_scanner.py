@@ -5,8 +5,8 @@ import signal # IF THE USER PRESSES CONTROL C WHILE THE PACKET IS BEING SENT ,IT
 import sys
 import multiprocessing
 
-ip_scanner = "192.168.163.128" #/24 address
-mac_scanner = "00:0c:29:a7:96:49"
+ip_scanner = "192.168.1.6" #/24 address
+mac_scanner = "00:c0:ca:98:77:eb"
 ip_broadcast = "255.255.255.255" # another way is the directed broadcast(network.255)
 pkt = Ether()/ARP()
 g_responded = []
@@ -57,7 +57,7 @@ def individual_arp_requestt(v):
 	ip_split[3] = str(v)
 	ip_target = ".".join(ip_split)
 	pkt["ARP"].pdst = ip_target
-	result = srp(pkt, timeout=2,verbose=False)[0]
+	result = srp(pkt,iface="wlan0", timeout=2,verbose=False)[0]
 	return result
 	# g_responded.append(result)
 
